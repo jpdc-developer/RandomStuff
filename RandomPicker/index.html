@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Picker</title>
+    <style>
+        .spacer {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        const pickFromList = () => {
+            const randomList = document.getElementById("random-list").value.split('\n');
+            const randomIndex = Math.floor(Math.random() * randomList.length);
+            if(randomList.length > 1){
+                alert(randomList[randomIndex])
+            }
+        }
+    </script>
+</head>
+<body>
+    Hello World!
+    <div class="spacer"></div>
+    <button type="button" onclick="pickFromList()">Pick from List</button>
+    <div>
+        <label for="random-list">Random List</label>
+        <textarea 
+            id="random-list"
+            type="text" 
+            name="random-list" 
+            placeholder="Enter Names"
+            maxlength="500"
+            rows="4"
+            cols="50"
+        ></textarea>
+    </div>
+</body>
+</html>
